@@ -84,11 +84,13 @@ with col_left:
         "Institution": ["Rotman (U of T)", "University of Toronto"],
         "Year": ["2026 (Candidate)", "2021"]
     }
-    st.table(pd.DataFrame(edu_data))
+    # Using st.dataframe with hide_index=True for a cleaner look
+    st.dataframe(pd.DataFrame(edu_data), hide_index=True, use_container_width=True)
 
 with col_right:
     st.header("💼 Core Competencies")
     comp_data = {
         "Competency": ["Experienced 'Translator'", "Persuasive Presenter", "Structured Thinker", "Problem Solver"]
     }
-    st.table(pd.DataFrame(comp_data))
+    # Hiding the index here as well
+    st.dataframe(pd.DataFrame(comp_data), hide_index=True, use_container_width=True)
